@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
 import { Provider, connect } from 'react-redux';
 import { createStore, combineReducers } from 'redux'
-
 import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 
 import routes from './src/config/routes';
@@ -50,7 +48,7 @@ export default class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <AppWithNavigationState />
+                    <AppWithNavigationState />
             </Provider>
         )
     }

@@ -1,13 +1,6 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-import React, { Component } from 'react';
-import { AppRegistry } from 'react-native';
-import App from './app';
-
+import React, { Component } from 'react'
+import { AppRegistry, View, Dimensions } from 'react-native'
+import App from './app'
 export default class phoneshop extends Component {
   render() {
     return (
@@ -16,4 +9,4 @@ export default class phoneshop extends Component {
   }
 }
 
-AppRegistry.registerComponent('phoneshop', () => phoneshop);
+AppRegistry.registerComponent('phoneshop', () => phoneshop)

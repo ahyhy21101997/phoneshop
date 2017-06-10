@@ -21,13 +21,14 @@ var initialState = {
         { image: HotPhone2, phone: 'vivov5' },
     ],
     phone: [
-        { image: "", name: "Iphone 6s Plus", color: "Trắng", producer: "apple", price: "11,000,000", model: "6splus" },
-        { image: "", name: "Iphone 7s Plus", color: "Đen", producer: "apple", price: "17,000,000", model: "7splus" },
+        modelSelected = "",
+        { image: "", name: "Iphone 6s Plus", color: "white", producer: "apple", price: "11,000,000", model: "6splus" },
+        { image: "", name: "Iphone 7s Plus", color: "black", producer: "apple", price: "17,000,000", model: "7splus" },
         { image: "", name: "Samsung galaxy S8 Edge", color: "", producer: "samsung", price: "11,000,000", model: "s8e" },
         { image: "", name: "Samsung galaxy S7 Edge", color: "", producer: "samsung", price: "11,000,000", model: "s7e" },
-        { image: "", name: "Oppo F900", color: "Hồng", producer: "oppo", price: "5,000,000", model: "oppof900" },
-        { image: "", name: "Oppo F1 Selfi", color: "Trắng", producer: "oppo", price: "7,000,000", model: "oppof1" },
-        
+        { image: "", name: "Oppo F900", color: "pink", producer: "oppo", price: "5,000,000", model: "oppof900" },
+        { image: "", name: "Oppo F1 Selfi", color: "white", producer: "oppo", price: "7,000,000", model: "oppof1" },
+
     ]
 }
 

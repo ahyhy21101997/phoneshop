@@ -14,6 +14,8 @@ import { Picker } from 'native-base'
 import SearchIcon from '../public/icons/search.png'
 import Logo from '../public/images/logo.png'
 
+const { height, width } = Dimensions.get('window')
+
 export default class Header extends Component {
     render() {
         var { selectedPosition,
@@ -22,7 +24,7 @@ export default class Header extends Component {
             onChangePage } = this.props;
         return (
             <View style={styles.container}>
-                
+
                 <View style={styles.optionBar}>
                     <View style={styles.logo}>
                         <Image style={styles.logoIcon} source={Logo} />
@@ -79,8 +81,8 @@ export default class Header extends Component {
         )
     }
 }
-const { width, height } = Dimensions.get('window')
-const styles = StyleSheet.create({
+
+var styles = StyleSheet.create({
     container: {
         padding: 5,
         height: 100,
