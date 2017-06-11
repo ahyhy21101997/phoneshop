@@ -17,6 +17,25 @@ import Logo from '../public/images/logo.png'
 const { height, width } = Dimensions.get('window')
 
 export default class Header extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            width: Dimensions.get('window').width,
+            height: Dimensions.get('window').height,
+        }
+
+        this.onLayout = this.onLayout.bind(this);
+
+    }
+
+    onLayout(e) {
+        this.setState({
+            width: Dimensions.get('window').width,
+            height: Dimensions.get('window').height,
+        });
+    }
+
     render() {
         var { selectedPosition,
             onChangePosition,
@@ -86,7 +105,7 @@ var styles = StyleSheet.create({
     container: {
         padding: 5,
         height: 100,
-        width: width,
+        width: this.state.width,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#E0052B'

@@ -16,7 +16,7 @@ class Banner extends Component {
                 <Swiper
                     autoplay={true}
                     autoplayTimeout={4}
-                    width={width - 10}
+                    width={width}
                     height={175}
                     activeDotColor='#E0052B'
                 >
@@ -46,7 +46,7 @@ var styles = StyleSheet.create({
         paddingBottom: 5,
     },
     bannerImage: {
-        width: width - 10,
+        width: width,
         height: 175
     }
 })
