@@ -14,28 +14,9 @@ import { Picker } from 'native-base'
 import SearchIcon from '../public/icons/search.png'
 import Logo from '../public/images/logo.png'
 
-const { height, width } = Dimensions.get('window')
+
 
 export default class Header extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            width: Dimensions.get('window').width,
-            height: Dimensions.get('window').height,
-        }
-
-        this.onLayout = this.onLayout.bind(this);
-
-    }
-
-    onLayout(e) {
-        this.setState({
-            width: Dimensions.get('window').width,
-            height: Dimensions.get('window').height,
-        });
-    }
-
     render() {
         var { selectedPosition,
             onChangePosition,
@@ -100,12 +81,11 @@ export default class Header extends Component {
         )
     }
 }
-
+const { height, width } = Dimensions.get('window')
 var styles = StyleSheet.create({
     container: {
         padding: 5,
-        height: 100,
-        width: this.state.width,
+        height: height * 0.15,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#E0052B'
@@ -113,20 +93,21 @@ var styles = StyleSheet.create({
 
     optionBar: {
         paddingBottom: 5,
-        height: 45,
-        width: width * 0.93,
+        flex: 1,
         justifyContent: 'space-between',
         flexDirection: 'row',
     },
     logo: {
-        flex: 1
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     logoIcon: {
-        width: 35,
-        height: 40,
+        width: width * 0.08,
+        height: height * 0.05,
     },
     posPicker: {
-        flex: 5,
+        flex: 3,
         marginLeft: 5,
         borderRadius: 3,
         justifyContent: 'center',
@@ -142,8 +123,7 @@ var styles = StyleSheet.create({
 
     searchBar: {
         paddingLeft: 30,
-        height: 40,
-        width: width * 0.93,
+        flex: 1,
         borderRadius: 3,
         flexDirection: 'row',
         backgroundColor: 'white'
@@ -153,7 +133,6 @@ var styles = StyleSheet.create({
     },
     searchButton: {
         flex: 1,
-        height: 45,
         justifyContent: 'center',
         alignItems: 'center'
     },

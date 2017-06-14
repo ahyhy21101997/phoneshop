@@ -1,23 +1,32 @@
 import React, { Component } from 'react'
 import {
-    View,
-    FlatList,
-    ScrollView
+    ScrollView,
+    Dimensions
 } from 'react-native'
 import { connect } from 'react-redux'
 
+//action
+import { changePhoneShow } from '../../actions/data'
+
 import Banner from '../../Components/Home/Banner'
-import HotPhone from '../../Components/Home/HotPhone'
+import Phone from '../../Components/Home/Phone'
+const { width, height } = Dimensions.get('window')
 
 class Home extends Component {
     render() {
         return (
             <ScrollView
+                style={{ height: height - 120 }}
                 showsVerticalScrollIndicator={false}
             >
                 <Banner bannerData={this.props.bannerData} />
-                <HotPhone hotPhoneData={this.props.hotPhoneData} />
+                <Phone
+                    phoneData={this.props.phoneData}
+                    phoneShow={this.props.phoneShow}
+                    onChangePhoneShow={this.props.onChangePhoneShow} />
+
             </ScrollView>
+
         )
     }
 }
@@ -25,13 +34,18 @@ class Home extends Component {
 const mapStateToProps = (state) => {
     return {
         bannerData: state.data.banner,
-        hotPhoneData: state.data.hotphone
+        phoneData: state.data.phone,
+        phoneShow: state.data.phoneShow
     }
 }
 const mapDispatchToProps = (dispatch) => {
-
+    return {
+        onChangePhoneShow: (value) => {
+            dispatch(changePhoneShow(value))
+        }
+    }
 }
 
-const HomeWithState = connect(mapStateToProps)(Home)
+const HomeWithState = connect(mapStateToProps, mapDispatchToProps)(Home)
 
 export default HomeWithState

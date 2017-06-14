@@ -16,8 +16,8 @@ class HotPhone extends Component {
                 <Swiper
                     autoplay={true}
                     autoplayTimeout={7}
-                    width={width - 10}
-                    height={230}
+                    width={width}
+                    height={200}
                     activeDotColor='#E0052B'
                 >
                     {
@@ -45,7 +45,7 @@ var styles = StyleSheet.create({
         alignItems: 'center'
     },
     bannerImage: {
-        width: width - 5,
-        height: 230,
+        width: width,
+        height: 200,
     }
 })

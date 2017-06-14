@@ -8,7 +8,9 @@ import {
 } from 'react-native'
 import Swiper from 'react-native-swiper'
 
+
 class Banner extends Component {
+ 
     render() {
         var { bannerData } = this.props
         return (
@@ -17,7 +19,7 @@ class Banner extends Component {
                     autoplay={true}
                     autoplayTimeout={4}
                     width={width}
-                    height={175}
+                    height={height * 0.3}
                     activeDotColor='#E0052B'
                 >
                     {
@@ -43,10 +45,10 @@ var styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'center',
-        paddingBottom: 5,
+        marginTop: 5
     },
     bannerImage: {
         width: width,
-        height: 175
+        height: height * 0.3,
     }
 })

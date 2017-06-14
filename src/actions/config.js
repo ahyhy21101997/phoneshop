@@ -2,3 +2,4 @@ export const CHANGE_POSITION = 'CHANGE_POSITION'
 export const CHANGE_PAGE = 'CHANGE_PAGE'
 
 export const UPDATE_DATA = 'UPDATE_DATA'
+export const CHANGE_PHONE_SHOW = 'CHANGE_PHONE_SHOW'
