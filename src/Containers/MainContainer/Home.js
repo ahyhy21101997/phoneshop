@@ -10,8 +10,9 @@ import { changePhoneShow } from '../../actions/data'
 
 import Banner from '../../Components/Home/Banner'
 import Phone from '../../Components/Home/Phone'
-const { width, height } = Dimensions.get('window')
+import ProductSlideShow from '../../Components/Home/ProductSlideShow'
 
+const { width, height } = Dimensions.get('window')
 class Home extends Component {
     render() {
         return (
@@ -20,11 +21,23 @@ class Home extends Component {
                 showsVerticalScrollIndicator={false}
             >
                 <Banner bannerData={this.props.bannerData} />
-                <Phone
-                    phoneData={this.props.phoneData}
-                    phoneShow={this.props.phoneShow}
-                    onChangePhoneShow={this.props.onChangePhoneShow} />
 
+                <ProductSlideShow
+                    title={"Điện Thoại"}
+                    productData={this.props.phoneData}
+                    producer={this.props.phoneShow}
+                    onChangeProductType={this.props.onChangePhoneShow}
+                    producers={[
+                        { type: "hot", name: "hot" },
+                        { type: "apple", name: "iPhone" },
+                        { type: "samsung", name: 'Samsung' },
+                        { type: "sony", name: "Sony" },
+                        { type: "oppo", name: "Oppo" }
+
+                    ]}
+
+                />
+                
             </ScrollView>
 
         )
