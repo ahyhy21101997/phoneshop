@@ -6,7 +6,7 @@ import {
 import { connect } from 'react-redux'
 
 //action
-import { changePhoneShow } from '../../actions/data'
+import { changePhoneProducer, changeTabletProducer } from '../../actions/data'
 
 import Banner from '../../Components/Home/Banner'
 import Phone from '../../Components/Home/Phone'
@@ -17,7 +17,7 @@ class Home extends Component {
     render() {
         return (
             <ScrollView
-                style={{ height: height - 120 }}
+                style={{ height: height - (height * 0.2) }}
                 showsVerticalScrollIndicator={false}
             >
                 <Banner bannerData={this.props.bannerData} />
@@ -25,7 +25,7 @@ class Home extends Component {
                 <ProductSlideShow
                     title={"Điện Thoại"}
                     productData={this.props.phoneData}
-                    producer={this.props.phoneShow}
+                    producer={this.props.phoneProducer}
                     onChangeProductType={this.props.onChangePhoneShow}
                     producers={[
                         { type: "hot", name: "hot" },
@@ -33,11 +33,20 @@ class Home extends Component {
                         { type: "samsung", name: 'Samsung' },
                         { type: "sony", name: "Sony" },
                         { type: "oppo", name: "Oppo" }
-
                     ]}
 
                 />
-                
+                <ProductSlideShow
+                    title={"Máy Tính Bảng"}
+                    productData={this.props.tabletData}
+                    producer={this.props.tabletProducer}
+                    onChangeProductType={this.props.onChangeTabletProducer}
+                    producers={[
+                        { type: "hot", name: "hot" },
+                        { type: "apple", name: "iPad" }
+                    ]}
+
+                />
             </ScrollView>
 
         )
@@ -47,14 +56,21 @@ class Home extends Component {
 const mapStateToProps = (state) => {
     return {
         bannerData: state.data.banner,
+
         phoneData: state.data.phone,
-        phoneShow: state.data.phoneShow
+        phoneProducer: state.data.phoneProducer,
+
+        tabletData: state.data.tablet,
+        tabletProducer: state.data.tabletProducer
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        onChangePhoneShow: (value) => {
-            dispatch(changePhoneShow(value))
+        onChangePhoneProducer: (value) => {
+            dispatch(changePhoneProducer(value))
+        },
+        onChangeTabletProducer: (producer) => {
+            dispatch(changeTabletProducer(producer))
         }
     }
 }
