@@ -38,7 +38,8 @@ var initialState = {
         {image: Ipad1, name:"Ipad Air Pro 11", color: "white", producer: "apple", price: "11,000,000", model: "ipadairgray12", isHot: true},
         {image: Ipad2, name:"Ipad Wifi 9.4 Gold", color: "gold", producer: "apple", price: "15,000,000", model: "ipad Gold", isHot: false},
         {image: Ipad3, name:"Ipad Pro Pink 12", color: "pink", producer: "apple", price: "19,000,000", model: "ipadpropink", isHot: true},
-    ]
+    ],
+    producerChoose: 'tatca'
 }
 
 import * as config from '../actions/config'
@@ -54,6 +55,10 @@ const data = (state = initialState, action) => {
         case config.CHANGE_TABLET_PRODUCER:
             return Object.assign({}, state, {
                 tabletProducer : action.producer
+            })
+        case config.CHANGE_PRODUCER_CHOOSE:
+            return Object.assign({}, state, {
+                producerChoose : action.producer
             })
         default:
             return state

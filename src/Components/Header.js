@@ -53,8 +53,8 @@ export default class Header extends Component {
                             mode="dropdown">
                             <Picker.Item label="Trang Chủ" value="trangchu" />
                             <Picker.Item label="Điện thoại" value="dienthoai" />
-                            <Picker.Item label="Máy tính bản" value="maytinhban" />
-                            <Picker.Item label="Phục kiện" value="phukien" />
+                            <Picker.Item label="Máy tính bảng" value="maytinhbang" />
+                            <Picker.Item label="Phụ kiện" value="phukien" />
                             <Picker.Item label="Trả góp" value="tragop" />
                             <Picker.Item label="Hàng Cũ" value="hangcu" />
                             <Picker.Item label="Sắp về" value="sapve" />

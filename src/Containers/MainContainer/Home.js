@@ -9,7 +9,6 @@ import { connect } from 'react-redux'
 import { changePhoneProducer, changeTabletProducer } from '../../actions/data'
 
 import Banner from '../../Components/Home/Banner'
-import Phone from '../../Components/Home/Phone'
 import ProductSlideShow from '../../Components/Home/ProductSlideShow'
 
 const { width, height } = Dimensions.get('window')
@@ -26,7 +25,7 @@ class Home extends Component {
                     title={"Điện Thoại"}
                     productData={this.props.phoneData}
                     producer={this.props.phoneProducer}
-                    onChangeProductType={this.props.onChangePhoneShow}
+                    onChangeProductType={this.props.onChangePhoneProducer}
                     producers={[
                         { type: "hot", name: "hot" },
                         { type: "apple", name: "iPhone" },
@@ -66,8 +65,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        onChangePhoneProducer: (value) => {
-            dispatch(changePhoneProducer(value))
+        onChangePhoneProducer: (producer) => {
+            dispatch(changePhoneProducer(producer))
         },
         onChangeTabletProducer: (producer) => {
             dispatch(changeTabletProducer(producer))

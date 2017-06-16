@@ -2,7 +2,7 @@ import * as config from '../actions/config'
 
 const initialState = {
     position: 'hcm',
-    page: 'trangchu'
+    page: 'dienthoai'
 }
 const options = (state = initialState, action) => {
     switch (action.type) {

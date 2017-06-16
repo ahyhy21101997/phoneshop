@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 
 //action
 import { changePosition, changePage } from '../actions/options'
+import { changePhoneProducer, changeTabletProducer, changeProducerChoose } from '../actions/data'
 
 class Main extends Component {
     static navigationOptions = {
@@ -21,7 +22,16 @@ class Main extends Component {
                     selectedPage={this.props.page}
                     onChangePage={this.props.onChangePage}
                 />
-                <MainContainer page={this.props.page} />
+                <MainContainer
+                    page={this.props.page}
+
+                    producerChoose={this.props.producerChoose}
+                    onChangeProducerChoose={this.props.onChangeProducerChoose}
+
+                    phoneData={this.props.phoneData}
+                    tabletData={this.props.tabletData}
+                    
+                />
             </View>
         )
     }
@@ -34,6 +44,15 @@ const mapDispatchToProps = (dispatch) => {
         },
         onChangePage: (page) => {
             dispatch(changePage(page))
+        },
+        changePhoneProducer: (producer) => {
+            dispatch(changePhoneProducer(producer))
+        },
+        changeTabletProducer: (producer) => {
+            dispatch(changeTabletProducer(producer))
+        },
+        onChangeProducerChoose: (producer) => {
+            dispatch(changeProducerChoose(producer))
         }
     }
 }
@@ -42,7 +61,14 @@ const mapStateToProps = (state) => {
     return {
         position: state.options.position,
         page: state.options.page,
-      
+
+        producerChoose: state.data.producerChoose,
+
+        phoneData: state.data.phone,
+        phoneProducer: state.data.phoneProducer,
+
+        tabletData: state.data.tablet,
+        tabletProducer: state.data.tabletProducer,
     }
 }
 

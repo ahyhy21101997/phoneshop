@@ -14,7 +14,7 @@ export default class Phone extends Component {
     _renderItem = ({ item }) => {
         var producer = this.props.producer
         if (item.model) {
-            if (item.isHot == true && producer == "hot") {
+            if (item.isHot == true && (producer == "hot" || producer == "tatca")) {
                 return (
                     <TouchableOpacity key={item.model} >
                         <View style={styles.productWraper}>
@@ -84,6 +84,7 @@ export default class Phone extends Component {
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={this.__keyExtractor}
                         renderItem={this._renderItem}
+                        initialNumToRender={1}
                     />
                 </View>
             </View >

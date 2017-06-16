@@ -6,6 +6,7 @@ import {
 } from 'react-native'
 
 import Home from './MainContainer/Home'
+import DevicePage from './MainContainer/DevicePage'
 
 class MainContainer extends Component {
 
@@ -16,7 +17,32 @@ class MainContainer extends Component {
                 show = <Home />
                 break
             case 'dienthoai':
-                show = null
+                show = <DevicePage
+                    data={this.props.phoneData}
+                    producer={this.props.producerChoose}
+                    onChangeProducer={this.props.onChangeProducerChoose}
+                    producers={[
+                        { name: "Tất Cả", value: 'tatca' },
+                        { name: "Apple", value: "apple" },
+                        { name: "Samsung", value: "samsung" },
+                        { name: "Sony", value: "sony" },
+                        { name: "Oppo", value: "oppo" }
+                    ]}
+                />
+                break
+            case 'maytinhbang':
+                show = <DevicePage
+                    data={this.props.tabletData}
+                    producer={this.props.producerChoose}
+                    onChangeProducer={this.props.onChangeProducerChoose}
+                    producers={[
+                        { name: "Tất Cả", value: 'tatca' },
+                        { name: "Apple", value: "apple" },
+                        { name: "Samsung", value: "samsung" },
+                        { name: "Sony", value: "sony" },
+                        { name: "Oppo", value: "oppo" }
+                    ]}
+                />
                 break
             default:
                 show = null

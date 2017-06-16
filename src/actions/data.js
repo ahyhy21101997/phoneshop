@@ -13,3 +13,10 @@ export const changeTabletProducer = (producer) => {
         producer,
     }
 }
+
+export const changeProducerChoose = (producer) => {
+    return {
+        type: config.CHANGE_PRODUCER_CHOOSE,
+        producer,
+    }
+}
