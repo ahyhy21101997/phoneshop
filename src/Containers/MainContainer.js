@@ -11,10 +11,11 @@ import DevicePage from './MainContainer/DevicePage'
 class MainContainer extends Component {
 
     render() {
+
         let show = null
         switch (this.props.page) {
             case 'trangchu':
-                show = <Home />
+                show = <Home onPressProduct={this.props.onPressProduct} />
                 break
             case 'dienthoai':
                 show = <DevicePage
@@ -28,11 +29,13 @@ class MainContainer extends Component {
                         { name: "Sony", value: "sony" },
                         { name: "Oppo", value: "oppo" }
                     ]}
+                    onPressProduct={this.props.onPressProduct}
                 />
                 break
             case 'maytinhbang':
                 show = <DevicePage
                     data={this.props.tabletData}
+                    navigation={this.props.navigation}
                     producer={this.props.producerChoose}
                     onChangeProducer={this.props.onChangeProducerChoose}
                     producers={[
@@ -42,6 +45,7 @@ class MainContainer extends Component {
                         { name: "Sony", value: "sony" },
                         { name: "Oppo", value: "oppo" }
                     ]}
+                    onPressProduct={this.props.onPressProduct}
                 />
                 break
             default:

@@ -43,13 +43,15 @@ const AppWithNavigationState = connect(mapStateToProps)(AppNavigator)
 
 //tạo store từ mấy cái đó
 const store = createStore(appReducer)
-
 import Orientation from 'react-native-orientation'
 export default class App extends Component {
-    componentWillMount() {
-        Orientation.lockToPortrait();
+    constructor(props) {
+        super(props)
+
     }
+
     render() {
+        Orientation.lockToPortrait()
         return (
             <Provider store={store}>
                 <AppWithNavigationState />

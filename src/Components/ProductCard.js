@@ -13,7 +13,7 @@ export default class ProductCard extends Component {
         let { model, name, price, image } = this.props
         return (
             <View style={styles.container}>
-                <TouchableHighlight key={model} >
+                <TouchableHighlight key={model} onPress={() => this.props.onPressProduct({name, price, image, model})} >
                     <View style={styles.productWraper}>
                         <Image style={styles.productImage} source={image} />
                         <View style={styles.productTitle}>

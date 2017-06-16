@@ -16,7 +16,7 @@ export default class Phone extends Component {
         if (item.model) {
             if (item.isHot == true && (producer == "hot" || producer == "tatca")) {
                 return (
-                    <TouchableOpacity key={item.model} >
+                    <TouchableOpacity key={item.model} onPress={()=> this.props.onPressProduct({name: item.name, price: item.price, image: item.image, model: item.model})} >
                         <View style={styles.productWraper}>
                             <Image style={styles.productImage} source={item.image} />
                             <View style={styles.productTitle}>

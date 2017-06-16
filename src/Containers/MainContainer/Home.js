@@ -33,6 +33,7 @@ class Home extends Component {
                         { type: "sony", name: "Sony" },
                         { type: "oppo", name: "Oppo" }
                     ]}
+                    onPressProduct={this.props.onPressProduct}
 
                 />
                 <ProductSlideShow
@@ -44,6 +45,7 @@ class Home extends Component {
                         { type: "hot", name: "hot" },
                         { type: "apple", name: "iPad" }
                     ]}
+                    onPressProduct={this.props.onPressProduct}
 
                 />
             </ScrollView>

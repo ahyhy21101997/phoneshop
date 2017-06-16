@@ -7,6 +7,9 @@ import { connect } from 'react-redux'
 //action
 import { changePosition, changePage } from '../actions/options'
 import { changePhoneProducer, changeTabletProducer, changeProducerChoose } from '../actions/data'
+import { NavigationActions } from 'react-navigation'
+
+import Img from '../public/images/product/iphone/6spluswhite.png'
 
 class Main extends Component {
     static navigationOptions = {
@@ -14,8 +17,9 @@ class Main extends Component {
         header: null
     }
     render() {
+
         return (
-            <View style={{}}>
+            <View>
                 <Header
                     selectedPosition={this.props.position}
                     onChangePosition={this.props.onChangePosition}
@@ -30,7 +34,8 @@ class Main extends Component {
 
                     phoneData={this.props.phoneData}
                     tabletData={this.props.tabletData}
-                    
+
+                    onPressProduct={(params) => this.props.onChangeScreen('ProductInfo', params)}
                 />
             </View>
         )
@@ -53,7 +58,11 @@ const mapDispatchToProps = (dispatch) => {
         },
         onChangeProducerChoose: (producer) => {
             dispatch(changeProducerChoose(producer))
+        },
+        onChangeScreen: (screen, params) => {
+            dispatch(NavigationActions.navigate({ routeName: screen, params: params }))
         }
+
     }
 }
 
@@ -69,6 +78,8 @@ const mapStateToProps = (state) => {
 
         tabletData: state.data.tablet,
         tabletProducer: state.data.tabletProducer,
+
+        nav: state.nav
     }
 }
 

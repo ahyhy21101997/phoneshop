@@ -20,6 +20,7 @@ export default class DevicePage extends Component {
                     name={item.name}
                     price={item.price}
                     image={item.image}
+                    onPressProduct={this.props.onPressProduct}
                 />
             )
         } else {
@@ -30,6 +31,7 @@ export default class DevicePage extends Component {
                         name={item.name}
                         price={item.price}
                         image={item.image}
+                        onPressProduct={this.props.onPressProduct}
                     />
                 )
             }
